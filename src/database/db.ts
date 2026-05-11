@@ -61,7 +61,7 @@ export async function getDb(): Promise<WebDatabase> {
   if (_db) return _db;
 
   const SQL = await initSqlJs({
-    locateFile: file => `https://sql.js.org/dist/${file}`
+    locateFile: file => `${import.meta.env.BASE_URL}${file}`
   });
 
   const savedData = localStorage.getItem("orbit_web_db");
